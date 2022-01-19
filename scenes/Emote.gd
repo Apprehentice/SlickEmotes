@@ -1,12 +1,12 @@
 extends RigidBody2D
 
 onready var rng : RandomNumberGenerator = RandomNumberGenerator.new();
-onready var confetti = preload("res://scenes/Confetti.tscn");
-onready var has_popped = false;
+onready var confetti : Resource = preload("res://scenes/Confetti.tscn");
+onready var has_popped : bool = false;
 
 export var Force : int = 250;
 export var AngularForce : int = 10;
-export var party = true;
+export var party : bool = true;
 
 signal popped
 
