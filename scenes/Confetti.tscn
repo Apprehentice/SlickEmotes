@@ -1,0 +1,118 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://scenes/Confetti.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ConfettiSounds.gd" type="Script" id=2]
+[ext_resource path="res://sounds/noisemaker-12.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/noisemaker-13.wav" type="AudioStream" id=4]
+[ext_resource path="res://sounds/noisemaker-15.wav" type="AudioStream" id=5]
+[ext_resource path="res://sounds/noisemaker-11.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/noisemaker-14.wav" type="AudioStream" id=7]
+[ext_resource path="res://sounds/noisemaker-05.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/noisemaker-07.wav" type="AudioStream" id=9]
+[ext_resource path="res://sounds/noisemaker-02.wav" type="AudioStream" id=10]
+[ext_resource path="res://sounds/noisemaker-03.wav" type="AudioStream" id=11]
+[ext_resource path="res://sounds/noisemaker-01.wav" type="AudioStream" id=12]
+[ext_resource path="res://sounds/noisemaker-04.wav" type="AudioStream" id=13]
+[ext_resource path="res://sounds/noisemaker-06.wav" type="AudioStream" id=14]
+[ext_resource path="res://sounds/noisemaker-08.wav" type="AudioStream" id=15]
+[ext_resource path="res://sounds/noisemaker-09.wav" type="AudioStream" id=16]
+[ext_resource path="res://sounds/noisemaker-10.wav" type="AudioStream" id=17]
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+gravity = Vector3( 0, 45, 0 )
+initial_velocity = 75.0
+initial_velocity_random = 0.5
+angular_velocity = 75.0
+angular_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 4 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[node name="Confetti" type="Particles2D"]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Sounds" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Noisemaker1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 12 )
+
+[node name="Noisemaker2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 10 )
+
+[node name="Noisemaker3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 11 )
+
+[node name="Noisemaker4" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 13 )
+
+[node name="Noisemaker5" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 8 )
+
+[node name="Noisemaker6" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 14 )
+
+[node name="Noisemaker7" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 9 )
+
+[node name="Noisemaker8" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 15 )
+
+[node name="Noisemaker9" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 16 )
+
+[node name="Noisemaker10" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 17 )
+
+[node name="Noisemaker11" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 6 )
+
+[node name="Noisemaker12" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 3 )
+
+[node name="Noisemaker13" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 4 )
+
+[node name="Noisemaker14" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 7 )
+
+[node name="Noisemaker15" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 5 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="Sounds/Noisemaker1" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker2" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker3" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker4" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker5" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker6" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker7" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker8" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker9" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker10" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker11" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker12" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker13" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker14" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="finished" from="Sounds/Noisemaker15" to="Sounds" method="_on_AudioStreamPlayer2D_finished"]

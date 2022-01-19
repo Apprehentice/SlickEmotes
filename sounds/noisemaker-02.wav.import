@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/noisemaker-02.wav-446a46faf2f54ba525ae1ab86dcae3ff.sample"
+
+[deps]
+
+source_file="res://sounds/noisemaker-02.wav"
+dest_files=[ "res://.import/noisemaker-02.wav-446a46faf2f54ba525ae1ab86dcae3ff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
