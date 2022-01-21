@@ -7,7 +7,7 @@ onready var party_callback : JavaScriptObject = JavaScript.create_callback(self,
 onready var clear_callback : JavaScriptObject = JavaScript.create_callback(self, "clear_emotes")
 onready var combo_container = $CanvasLayer/VBoxContainer/ComboContainer
 
-export var party : bool = true
+export var party : bool = false
 
 var combo : int = 0
 var emote_queue : Array = []
