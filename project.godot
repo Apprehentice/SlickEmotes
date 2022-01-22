@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Emote",
+"language": "GDScript",
+"path": "res://scenes/Emote.gd"
+}, {
+"base": "Node2D",
+"class": "EmoteSpawner",
+"language": "GDScript",
+"path": "res://scenes/EmoteSpawner.gd"
+} ]
+_global_script_class_icons={
+"Emote": "",
+"EmoteSpawner": ""
+}
+
 [application]
 
 config/name="SlickEmotes"

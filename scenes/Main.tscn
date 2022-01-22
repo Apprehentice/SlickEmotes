@@ -82,6 +82,4 @@ anims/RESET = SubResource( 3 )
 
 [node name="EmoteContainer" type="Node" parent="."]
 
-[node name="HttpRequestContainer" type="Node" parent="."]
-
 [connection signal="combo" from="." to="CanvasLayer/VBoxContainer/ComboContainer" method="combo"]

@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Emote
 
 onready var rng : RandomNumberGenerator = RandomNumberGenerator.new();
 onready var confetti : Resource = preload("res://scenes/Confetti.tscn");
@@ -6,7 +7,7 @@ onready var has_popped : bool = false;
 
 export var Force : int = 250;
 export var AngularForce : int = 10;
-export var party : bool = true;
+export var Party : bool = true;
 
 signal popped
 
@@ -15,7 +16,7 @@ func _ready():
 	self.linear_velocity = Vector2(rng.randf_range(-1, 1), 1) * (Force * -1);
 	self.angular_velocity = rng.randf_range(-1, 1) * AngularForce;
 
-func _process(delta):
+func _physics_process(delta):
 	var transform : Transform2D = get_viewport_transform();
 	var scale : Vector2 = transform.get_scale();
 	if (position.y > (-transform.origin / scale + get_viewport_rect().size / scale).y):
@@ -23,7 +24,7 @@ func _process(delta):
 
 
 func _on_Emote_body_entered(body):
-	if (party and not has_popped):
+	if (Party and not has_popped):
 		var c = confetti.instance();
 		c.position = self.position;
 		c.emitting = true;
